@@ -6,7 +6,7 @@ puppeteer.use(StealthPlugin());
 
 var base_url = "https://danbooru.donmai.us";
 
-var tags = "futanari -animated";
+var tags = "";//add you search tags here!
 
 (async (tags) => {
   // Launch the browser and open a new blank page
