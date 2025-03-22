@@ -1,0 +1,29 @@
+{
+  "name": "node_test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azurefan01/node_test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/azurefan01/node_test/issues"
+  },
+  "homepage": "https://github.com/azurefan01/node_test#readme",
+  "description": "",
+  "dependencies": {
+    "puppeteer": "^24.4.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-stealth": "^0.0.1-security"
+  },
+  "pkg": {
+    "assets": "node_modules/**/*.*"
+  }
+}
