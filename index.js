@@ -1,5 +1,4 @@
 import puppeteer from 'puppeteer-extra';
-//const puppeteer = require('puppeteer-extra')
 
 // add stealth plugin and use defaults (all evasion techniques)
 import StealthPlugin from 'puppeteer-extra-plugin-stealth';
@@ -20,22 +19,6 @@ var tags = "futanari -animated";
   // Set screen size
   await page.setViewport({ width: 1080, height: 1024 });
 
-  // Type into search box
-  //await page.type('.devsite-search-field', 'automate beyond recorder');
-
-  // Wait and click on first result
-  //const searchResultSelector = '.devsite-result-item-link';
-  //await page.waitForSelector(searchResultSelector);
-  //await page.click(searchResultSelector);
-
-  // Locate the full title with a unique string
-  //const textSelector = await page.waitForSelector(
-  //  'text/Customize and automate',
-  //);
-  //const fullTitle = await textSelector?.evaluate(el => el.textContent);
-
-  // Print the full title
-  //console.log('The title of this blog post is "%s".', fullTitle);
   var links = await page.$$eval("a.post-preview-link", el => el.map(anchor => anchor.getAttribute("href")));
   await page.setRequestInterception(true);
   page.on('request', (request) => {
@@ -46,7 +29,6 @@ var tags = "futanari -animated";
     }
   });
   for (const link of links) {
-    //console.log(decodeURIComponent(`${base_url+link}`));
     try {
       console.log(`${base_url + link}`);
       await page.goto(`${base_url + link}`);
