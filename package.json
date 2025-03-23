@@ -4,7 +4,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node index.js",
+    "danbooru": "node danbooru.js",
+    "rule34": "node rule34.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -14,7 +14,7 @@ var tags = "";//add you search tags here!
   const page = await browser.newPage();
 
   // Navigate the page to a URL
-  await page.goto(`https://danbooru.donmai.us/posts?tags=${tags.replaceAll(" ","+")}`);
+  await page.goto(`${base_url}/posts?tags=${tags.replaceAll(" ", "+")}`);
 
   // Set screen size
   await page.setViewport({ width: 1080, height: 1024 });
@@ -32,10 +32,12 @@ var tags = "";//add you search tags here!
     try {
       console.log(`${base_url + link}`);
       await page.goto(`${base_url + link}`);
-      var tags = await page.$$eval("ul.general-tag-list > li > span > a.search-tag",el => el.map(li => li.textContent));
-      tags.forEach(tag => {
-        console.log(tag);
-      });
+      var tags = await page.$$eval("ul.general-tag-list > li > span > a.search-tag", el => el.map(li => li.textContent));
+      if (!tags.includes("animated")) {
+        tags.forEach(tag => {
+          console.log(tag);
+        });
+      }
       console.log("");
     } catch (error) {
       console.error('Error navigating to the page:', error);
